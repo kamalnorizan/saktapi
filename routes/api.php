@@ -13,7 +13,7 @@ Route::post('/login', [AuthenticationController::class, 'login']);
 Route::middleware(['auth:sanctum'])->group(function () {
     // Authentication routes
     Route::post('/logout', [AuthenticationController::class, 'logout']);
-    Route::get('/profile', [AuthenticationController::class, 'profile']);
+    Route::post('/profile', [AuthenticationController::class, 'profile']);
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
